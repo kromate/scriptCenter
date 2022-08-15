@@ -2,6 +2,7 @@
 <template>
 	<div>
 		<LayoutNavBar />
+		<LazyPagesLandingHeroSection />
 	</div>
 </template>
 
