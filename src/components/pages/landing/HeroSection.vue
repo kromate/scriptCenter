@@ -1,10 +1,10 @@
 <template>
 	<div class="w-full h-auto bg md:p-20 p-6 flex flex-col justify-center items-center text-center gap-4 ">
 		<h1 class="text-5xl font-bold ">
-			Find and Share scripts
+			Centeral collection of script
 		</h1>
 		<p class="text-xl font-light w-full max-w-lg">
-			Contribute to the open source community with other students. Learn, collaborate, and share knowledge to build your portfolio and grow your network.
+			ScriptCenter is a platform that is built upon a
 		</p>
 	</div>
 </template>

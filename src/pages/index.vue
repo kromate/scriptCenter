@@ -3,6 +3,7 @@
 	<div>
 		<LayoutNavBar />
 		<LazyPagesLandingHeroSection />
+		<LazyPagesLandingScriptCardList />
 	</div>
 </template>
 
