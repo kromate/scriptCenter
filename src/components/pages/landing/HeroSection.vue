@@ -4,7 +4,7 @@
 			Centeral collection of script
 		</h1>
 		<p class="text-xl font-light w-full max-w-lg">
-			ScriptCenter is a platform that is built upon a
+			ScriptCenter is basically a web extension of RottenScript with other features like search, share, edit and maybe even run (coming soon.)
 		</p>
 	</div>
 </template>
