@@ -27,7 +27,7 @@ module.exports = {
 		'no-tabs': 'off',
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars': 'off',
-		' @typescript-eslint/no-explicit-any': 'off',
+		'@typescript-eslint/no-explicit-any': 'off',
 		'import/no-named-as-default': 'off',
 		'vue/no-template-shadow': 'off',
 		'no-var': 'error',
