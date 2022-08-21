@@ -22,10 +22,12 @@ export const FolderReader = (data: string) => {
     const BlockArr = Object.keys(requireComponent)
 
   for (let i = 0; i < BlockArr.length; i++) {
+    if (BlockArr[i].split('/')[4].includes('.md')) continue
     const obj = {
-    //   comp: requireComponent[BlockArr[i]],
+      comp: requireComponent[BlockArr[i]],
       type: BlockArr[i].split('/')[3],
-      name: BlockArr[i].split('/')[4]
+      name: BlockArr[i].split('/')[4],
+      fullLink: BlockArr[i]
     }
 
     result.push(obj)
@@ -33,3 +35,11 @@ export const FolderReader = (data: string) => {
 
   return result
 }
+
+export const logFileText = async (file) => {
+    const response = await fetch(file)
+    const text = await response.text()
+    console.log(text)
+}
+
+// logFileText('../../../../scriptFiles/JavaScript/Active_pull_request_commentors/script.js')
