@@ -7,7 +7,7 @@
 			</span>
 
 			<div class="flex items-center">
-				<button class="btn">
+				<button class="btn" disabled>
 					Report
 				</button>
 			</div>

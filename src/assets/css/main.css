@@ -6,6 +6,6 @@
 
 @layer components {
     .btn {
-        @apply bg-slate-900 px-4 py-1 rounded text-white;
+        @apply bg-slate-900 px-4 py-1 rounded text-white disabled:bg-gray-300 disabled:text-gray-800 disabled:cursor-not-allowed;
     }
 }
