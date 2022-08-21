@@ -6401,6 +6401,11 @@ vite-plugin-eslint@^1.7.0:
     "@types/eslint" "^8.4.5"
     rollup "^2.77.0"
 
+vite-plugin-virtual-plain-text@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/vite-plugin-virtual-plain-text/-/vite-plugin-virtual-plain-text-1.2.2.tgz#08bc5df334c762559742ab2795b02345d1102e34"
+  integrity sha512-fnAijoxAOll0vrhdux4GF+VXyhpMypQkJdCmIs3KFvQ1Djqu0TJS/aMNkchMm8gFbxcNJizDvN0p4C0bUjHHVw==
+
 "vite@^2.9.12 || ^3.0.0-0":
   version "3.0.2"
   resolved "https://registry.npmjs.org/vite/-/vite-3.0.2.tgz"

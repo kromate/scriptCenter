@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineNuxtConfig } from 'nuxt'
 import eslintPlugin from 'vite-plugin-eslint'
+import plainText from 'vite-plugin-virtual-plain-text'
 
 export default defineNuxtConfig({
 	ssr: false,
@@ -36,9 +37,13 @@ export default defineNuxtConfig({
 		middleware: './src/middleware'
 	},
 	vite: {
-		plugins: [eslintPlugin({
-			useEslintrc: true
-		})],
+		plugins: [
+		// 	eslintPlugin({
+		// 	useEslintrc: true
+		// }),
+			plainText()
+
+	],
 				resolve: {
 		alias: {
 			'@': fileURLToPath(new URL('./src', import.meta.url))

@@ -1,7 +1,7 @@
 <template>
 	<div class="w-full h-auto bg md:p-20 p-6 flex flex-col justify-center items-center text-center gap-4 ">
 		<h1 class="text-5xl font-bold ">
-			Centeral collection of script
+			Centeral collection of scripts
 		</h1>
 		<p class="text-xl font-light w-full max-w-lg">
 			ScriptCenter is basically a web extension of RottenScript with other features like search, share, edit and maybe even run (coming soon.)

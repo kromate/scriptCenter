@@ -25,7 +25,7 @@ const palette = {
 	success: { color: '#15803D', bg: '#DCFCE7' },
 	failed: { color: '#D12E2E', bg: '#FAEAEA' },
 	pending: { color: '#E2C044', bg: '#FAF5E1' },
-	default: { color: '#0145FF', bg: '#0145ff57' }
+	default: { color: '#6c5d09', bg: '#6c5d095c' }
 }
 
 		switch (toLowerCase(props.name)) {
