@@ -1,9 +1,10 @@
+
 <template>
 	<div class="w-full border-2 mx-auto p-4 rounded flex flex-col gap-4">
 		<div class="flex justify-between items-center">
 			<span class="flex items-center gap-3">
-				<LazyAvatar name="SC" :size="25" />
-				<span class="text-lg font-medium">Title</span>
+				<LazyAvatar :name="script.name" :size="25" />
+				<span class="text-lg font-medium">{{ script.name }}</span>
 			</span>
 
 			<div class="flex items-center">
@@ -21,12 +22,16 @@
 			<LazyBadge v-for="n in 5" :key="n" name="script Runner" />
 		</div>
 
-		<span class="text-slate-500 text-sm mt-1 font-semibold">Javascript</span>
+		<span class="text-slate-500 text-sm mt-1 font-semibold">{{ script.type }}</span>
 	</div>
 </template>
 
 <script setup lang="ts">
+import { scriptListType } from '@/composables/fileReader'
 
+defineProps<{
+	script:scriptListType,
+}>()
 </script>
 
 <style scoped>

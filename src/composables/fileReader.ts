@@ -1,8 +1,10 @@
-type scriptListType = {
+export type scriptListType = {
   type: string;
   name: string;
   fullLink: string;
+  fullLinkHash: string;
   tags: string[];
+  desc:string
 }
 
 export interface getBlockObject {
@@ -26,11 +28,16 @@ export const FolderReader = (data: string) => {
 
   for (let i = 0; i < BlockArr.length; i++) {
     if (BlockArr[i].split('/')[4].includes('.md')) continue
+    const hash = [...BlockArr[i].split('/')]
+    hash.splice(-1, 1, '*')
+
     const obj = {
       type: BlockArr[i].split('/')[3],
       name: BlockArr[i].split('/')[4],
       fullLink: BlockArr[i],
-      tags: []
+      fullLinkHash: hash.join('/'),
+      tags: [],
+      desc: ''
     }
 
     result.push(obj)
