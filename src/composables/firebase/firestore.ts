@@ -10,10 +10,10 @@ import { app } from './init'
 
 export const db = getFirestore(app)
 
-export const saveToFirestore = async (collection:string, data:any) => {
-    const id = uuidv4()
+export const saveToFirestore = async (collection:string, data:any, id:string = uuidv4()) => {
     await setDoc(doc(db, collection, id), data)
 }
+
 export const getSingleFirestoreDocument = async (collection:string, id:string) => {
   const singlepageBlockRef = doc(db, collection, id)
   const docSnap = await getDoc(singlepageBlockRef)

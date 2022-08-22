@@ -6,9 +6,12 @@
 </template>
 
 <script setup lang="ts">
+import { useStorage } from '@vueuse/core'
 import { FolderReader } from '@/composables/fileReader'
-
+import { uploadScript } from '@/composables/uploader'
 const scripts = FolderReader('scriptFiles')
+
+uploadScript()
 
 </script>
 
