@@ -20,7 +20,8 @@
 		"@vueuse/core": "^6.5.3",
 		"firebase": "^9.9.3",
 		"monaco-editor": "^0.34.0",
-		"split.js": "^1.6.5"
+		"split.js": "^1.6.5",
+		"uuid": "^8.3.2"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.0.3",
