@@ -108,10 +108,6 @@ watch(isDark, (value) => {
   })
 })
 
-const editorObserver = useResizeObserver(container, () => {
-  editor.layout()
-})
-
 onUnmounted(() => {
   editor?.dispose()
   editorObserver.stop()

@@ -3,14 +3,8 @@
 		<div class="flex flex-row h-full">
 			<div id="split-0" class="w-full">
 				<Tabs v-model="currentTab" :items="items" />
-				<MonacoEditor :active-tab="currentTab" @change="onChange" />
+				<MonacoEditor :active-tab="currentTab" />
 			</div>
-			<iframe
-				ref="iframe"
-				class="h-full w-full"
-				sandbox="allow-scripts"
-				frameBorder="0"
-			/>
 		</div>
 	</main>
 </template>
@@ -43,13 +37,6 @@ watch(isDark, (value) => {
   )
 })
 
-const onChange = (payload: Record<string, any>) => {
-  iframe.value!.srcdoc = generateHTML(payload, isDark.value)
-}
-
-onMounted(() => {
-  Split(['#split-0', 'iframe'])
-})
 </script>
 
 <style>
@@ -57,13 +44,4 @@ main {
   height: calc(100vh - var(--nav-height));
 }
 
-.gutter {
-  @apply dark:bg-gray-900 bg-no-repeat;
-  background-position: 50%;
-}
-
-.gutter.gutter-horizontal {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
-  cursor: col-resize;
-}
 </style>
