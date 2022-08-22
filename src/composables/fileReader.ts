@@ -41,16 +41,26 @@ export const FolderReader = (data: string) => {
 }
 
 export const logFileText = async (file) => {
-  console.log(file)
 	const response = await fetch(file)
 	const text = await response.text()
-	console.log(text)
+	return text
 }
 
-export const byFolderType = () => {
-  const requireScript = import.meta.glob('../../scriptFiles/**/*.md')
+export const byFolderType = async () => {
+  const FolderTypeObject = {}
+  const requireScript = import.meta.glob('../../scriptFiles/**')
 const scriptArr = Object.keys(requireScript)
-  console.log(requireScript)
+  for (let i = 0; i < scriptArr.length; i++) {
+    if (scriptArr[i].split('/')[4].includes('.md')) continue
+    const type = scriptArr[i].split('/')[3]
+    const folder = scriptArr[i].split('/')[4]
+    const file = scriptArr[i].split('/')[5]
+    if (!FolderTypeObject[type]) FolderTypeObject[type] = {}
+    if (!FolderTypeObject[type][folder]) FolderTypeObject[type][folder] = []
+
+   FolderTypeObject[type][folder].push({ fileName: file, content: await logFileText(scriptArr[i]) })
+  }
+  console.log(FolderTypeObject)
 }
 
 // logFileText('../../../../scriptFiles/JavaScript/Active_pull_request_commentors/script.js')
