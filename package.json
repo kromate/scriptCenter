@@ -15,6 +15,11 @@
 			"yarn lint"
 		]
 	},
+	"dependencies": {
+		"split.js": "^1.6.5",
+		"@vueuse/core": "^6.5.3",
+		"monaco-editor": "^0.25.2"
+	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.0.3",
 		"@commitlint/config-conventional": "^17.0.3",

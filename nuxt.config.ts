@@ -1,7 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineNuxtConfig } from 'nuxt'
-import eslintPlugin from 'vite-plugin-eslint'
-import plainText from 'vite-plugin-virtual-plain-text'
+const prefix = 'monaco-editor/esm/vs'
 
 export default defineNuxtConfig({
 	ssr: false,
@@ -37,13 +36,19 @@ export default defineNuxtConfig({
 		middleware: './src/middleware'
 	},
 	vite: {
-		plugins: [
-		// 	eslintPlugin({
-		// 	useEslintrc: true
-		// }),
-			plainText()
-
-	],
+	 build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          jsonWorker: [`${prefix}/language/json/json.worker`],
+          cssWorker: [`${prefix}/language/css/css.worker`],
+          htmlWorker: [`${prefix}/language/html/html.worker`],
+          tsWorker: [`${prefix}/language/typescript/ts.worker`],
+          editorWorker: [`${prefix}/editor/editor.worker`]
+        }
+      }
+    }
+  }
 				resolve: {
 		alias: {
 			'@': fileURLToPath(new URL('./src', import.meta.url))

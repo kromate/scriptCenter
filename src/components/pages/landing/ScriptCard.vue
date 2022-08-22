@@ -1,17 +1,17 @@
 
 <template>
-	<div class="w-full border-2 mx-auto p-4 rounded flex flex-col gap-4">
-		<div class="flex justify-between items-center">
+	<div class="w-full border-2 mx-auto p-4 rounded flex flex-col gap-4 ">
+		<div class=" w-full max-w-[90vw] flex flex-wrap justify-between items-center">
 			<span class="flex items-center gap-3">
 				<LazyAvatar :name="script.name" :size="25" />
-				<span class="text-lg font-medium">{{ script.name }}</span>
+				<span class="text-base font-medium w-[250px] truncate">{{ script.name }}</span>
 			</span>
 
-			<div class="flex items-center">
+			<!-- <div class="flex items-center">
 				<button class="btn" disabled>
 					Report
 				</button>
-			</div>
+			</div> -->
 		</div>
 
 		<p class="desc text-base font-light">
@@ -35,7 +35,5 @@ defineProps<{
 </script>
 
 <style scoped>
-*{
-	border: 1px solid red;
-}
+
 </style>
