@@ -24,7 +24,7 @@ export default defineNuxtConfig({
 		'@/components',
 		{ path: '@/components/core', extensions: ['vue'] }
 	],
-
+	ignore: ['.scriptFiles', './src/composables/fileReader.ts'],
 	build: {
 		postcss: {
 			postcssOptions: require('./postcss.config.js')
