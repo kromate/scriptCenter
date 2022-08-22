@@ -9,11 +9,7 @@
 import { FolderReader } from '@/composables/fileReader'
 
 const scripts = FolderReader('scriptFiles')
-// const test = import.meta.glob('../../../../scriptFiles/JavaScript/Active_pull_request_commentors/**')
 
-// console.log(test)
-
-console.log()
 </script>
 
 <style scoped>
