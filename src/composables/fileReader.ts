@@ -18,7 +18,7 @@ export interface getBlockObject {
 }
 
 const FolderReaderList = {
-	scriptFiles: import.meta.glob('../../.scriptFiles/**/*.md')
+	scriptFiles: import.meta.glob('../../scriptFiles/**/*.md')
 }
 
 export const FolderReader = (data: string) => {
@@ -50,7 +50,7 @@ export const logFileText = async (file) => {
 
 export const byFolderType = async () => {
 	const FolderTypeObject = {}
-	const requireScript = import.meta.glob('../../.scriptFiles/**')
+	const requireScript = import.meta.glob('../../scriptFiles/**')
 	const scriptArr = Object.keys(requireScript)
 	for (let i = 0; i < scriptArr.length; i++) {
 		if (scriptArr[i].split('/')[4].includes('.md')) continue

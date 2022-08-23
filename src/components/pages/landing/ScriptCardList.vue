@@ -7,12 +7,11 @@
 
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core'
-import { FolderReader } from '@/composables/fileReader'
-import { uploadScript } from '@/composables/uploader'
-const scripts = FolderReader('scriptFiles')
+import { FolderReader, byFolderType } from '@/composables/fileReader'
+import { uploadScript, uploadScriptList } from '@/composables/uploader'
 
-uploadScript()
-
+const scriptFiles = useStorage('scriptFiles', [])
+const sc = await byFolderType()
 </script>
 
 <style scoped>
