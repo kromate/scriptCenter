@@ -10,5 +10,5 @@ export const useScriptList = () => {
 console.log('script')
     }
 
-    return { loading, fetchScripts }
+    return { loading, fetchScripts, ...global }
 }
