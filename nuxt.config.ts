@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 	ssr: false,
 	target: 'static',
 	head: {
-		title: 'Traq',
+		title: 'ScriptCentral',
 		htmlAttrs: { lang: 'en' },
 		meta: [
 			{ charset: 'utf-8' },

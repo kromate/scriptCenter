@@ -3,7 +3,7 @@
 		<div class="flex items-center justify-between h-full">
 			<span
 				class="p-1 md:text-3xl text-xl font-black leading-none text-gray-900"
-			> ScriptCenter
+			> ScriptCental
 			</span>
 			<div>
 				<a
