@@ -10,7 +10,7 @@ import {
   query, where
 } from 'firebase/firestore'
 import { app } from './init'
-
+import { selected } from '@/composables/scriptCentral/index'
 export const db = getFirestore(app)
 
 export const saveToFirestore = async (
@@ -36,7 +36,7 @@ export const getSingleFirestoreDocument = async (
 
 export const getFirestoreCollection = async (collectionName: string) => {
   const collectionRef = collection(db, collectionName)
-  const q = query(collectionRef, limit(50), where('type', '==', 'Rust'))
+  const q = query(collectionRef, limit(50), where('type', '==', selected.value))
   const result = []
 	const querySnapshot = await getDocs(q)
 	querySnapshot.forEach((doc) => {

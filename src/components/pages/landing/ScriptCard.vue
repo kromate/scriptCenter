@@ -1,6 +1,6 @@
 
 <template>
-	<nuxt-link to="/editor/123" class="w-full border-2 mx-auto p-4 rounded flex flex-col gap-4 ">
+	<nuxt-link :to="`/editor/?type=${script.type}&id=${script.id}`" class="w-full border-2 mx-auto p-4 rounded flex flex-col gap-4 ">
 		<div class=" w-full max-w-[90vw] flex flex-wrap justify-between items-center">
 			<span class="flex items-center gap-3">
 				<LazyAvatar :name="script.name" :size="25" />
