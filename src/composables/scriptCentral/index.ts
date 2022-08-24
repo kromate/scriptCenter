@@ -4,7 +4,7 @@ import { getFirestoreCollection } from '../firebase/firestore'
 
 let fetchScripts
 
-type SelectedType =
+export type SelectedType =
 	| 'BASH'
 	| 'Golang'
 	| 'JavaScript'

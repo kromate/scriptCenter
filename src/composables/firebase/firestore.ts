@@ -25,8 +25,8 @@ export const getSingleFirestoreDocument = async (
 	collection: string,
 	id: string
 ) => {
-	const singlepageBlockRef = doc(db, collection, id)
-	const docSnap = await getDoc(singlepageBlockRef)
+	const singleDocumentRef = doc(db, collection, id)
+	const docSnap = await getDoc(singleDocumentRef)
 	if (docSnap.exists()) {
 		return docSnap.data()
 	} else {

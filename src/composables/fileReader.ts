@@ -8,15 +8,6 @@ export type scriptListType = {
 	desc: string;
 };
 
-export interface getBlockObject {
-	comp: () => Promise<{ [key: string]: any }>;
-	img?: string;
-	index?: string;
-	compLoaded?: boolean;
-	imgLoaded?: boolean;
-	name: string;
-}
-
 const FolderReaderList = {
 	scriptFiles: import.meta.glob('../../scriptFiles/**/*.md')
 }
