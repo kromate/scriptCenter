@@ -16,7 +16,7 @@ import Split from 'split.js'
 
 import MonacoEditor from './MonacoEditor.vue'
 import Tabs from './Tabs.vue'
-import { generateHTML, StorageName, useDarkGlobal } from '@/composables/utils'
+import { StorageName, useDarkGlobal } from '@/composables/utils'
 
 const iframe = ref<HTMLIFrameElement>()
 

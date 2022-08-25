@@ -37,7 +37,6 @@ export const useScriptList = () => {
 	 fetchScripts = async () => {
 		loading.value = true
 		scriptList.value = await getFirestoreCollection('scriptList')
-		console.log(scriptList.value.length)
 		loading.value = false
 	}
 

@@ -37,6 +37,8 @@ module.exports = {
 		camelcase: 'off',
 		'accessor-pairs': 'off',
 		'import/default': 'off',
+		'import/no-mutable-exports': 'off',
+		'vue/no-multiple-template-root': 'off',
 		'no-use-before-define': 'off',
 		'@typescript-eslint/no-empty-function': 'off',
 		indent: ['off', 'tab', { SwitchCase: 1 }],

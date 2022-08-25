@@ -1,30 +1,23 @@
 <template>
-  <div
-    class="border-b border-gray-200 dark:border-gray-700 text-sm flex justify-start dark:bg-gray-900 h-10"
-  >
-    <a
-      v-for="item in items"
-      :key="item.value"
-      :class="props.modelValue === item.value ? 'tab-item-active' : 'tab-item'"
-      href="#"
-      @click.prevent="emit('update:modelValue', item.value)"
-    >
-      {{ item.text }}
-    </a>
-  </div>
+	<div
+		class="border-b border-gray-200 dark:border-gray-700 text-sm flex justify-start dark:bg-gray-900 h-10"
+	>
+		<a
+			v-for="item in tabArray"
+			:key="item.value"
+			:class="selectedTab === item.fileName ? 'tab-item-active' : 'tab-item'"
+			href="#"
+			@click.prevent="emit('update:modelValue', item.value)"
+		>
+			{{ item.fileName }}
+		</a>
+	</div>
 </template>
 
 <script setup lang="ts">
-interface Item {
-  text: string;
-  value: string;
-}
+import { tabArray, selectedTab } from '@/composables/editor'
+console.log(tabArray)
 
-const props = defineProps<{
-  modelValue: string;
-  items: Item[];
-}>();
-const emit = defineEmits<(e: 'update:modelValue', tab: string) => void>();
 </script>
 
 <style>

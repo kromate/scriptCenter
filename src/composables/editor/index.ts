@@ -8,15 +8,29 @@ type editorDocumentType = {
     user:string
 }
 export const tabArray = ref([])
+export const selectedTab = ref()
+
 export const useEditor = () => {
 	const loading = ref(false)
 	const ScriptDocument = ref<editorDocumentType>()
 	const fetchScriptDocument = async (type: SelectedType, id: string) => {
 		loading.value = true
         ScriptDocument.value = await getSingleFirestoreDocument(type, id) as editorDocumentType
-        console.log(ScriptDocument.value)
-        tabArray.value = ScriptDocument.value.content
+        tabArray.value = arrangeArray(ScriptDocument.value.content)
+        selectedTab.value = tabArray.value[0]
+        loading.value = false
     }
 
     return { loading, fetchScriptDocument }
+}
+
+const arrangeArray = (data) => {
+    const firstEl = data[0]
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].fileName.toLowerCase() === 'readme.md') {
+            data[0] = data[i]
+            data[i] = firstEl
+        }
+    }
+    return data
 }

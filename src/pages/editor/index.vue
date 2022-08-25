@@ -3,6 +3,7 @@
 		<Nav />
 		<Main />
 	</div>
+	<PageLoading v-if="loading" />
 </template>
 
 <script setup lang="ts">
