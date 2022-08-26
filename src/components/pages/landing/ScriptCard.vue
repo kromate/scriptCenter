@@ -15,7 +15,8 @@
 		</div>
 
 		<p class="desc text-base font-light">
-			This is a utility library for Python Projects to Create Readme, fast and easier than ever!
+			<span v-if="script.desc">{{ script.desc }}</span>
+			<span v-else>No description has been set for this script yet. send a DM on twitter if you would link to contribute <a href="https://twitter.com/kromate_24" target="_blank" rel="noopener noreferrer">@kromate_24</a> </span>
 		</p>
 
 		<div class="flex items-center gap-2 flex-wrap">
