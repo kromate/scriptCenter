@@ -5,9 +5,9 @@
 		<a
 			v-for="item in tabArray"
 			:key="item.value"
-			:class="selectedTab === item.fileName ? 'tab-item-active' : 'tab-item'"
+			:class="selectedTab.fileName === item.fileName ? 'tab-item-active' : 'tab-item'"
 			href="#"
-			@click.prevent="emit('update:modelValue', item.value)"
+			@click.prevent="selectContentTabObject(item)"
 		>
 			{{ item.fileName }}
 		</a>
@@ -15,8 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { tabArray, selectedTab } from '@/composables/editor'
-console.log(tabArray)
+import { tabArray, selectedTab, selectContentTabObject } from '@/composables/editor'
 
 </script>
 

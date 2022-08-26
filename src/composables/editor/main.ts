@@ -1,8 +1,6 @@
 import * as monaco from 'monaco-editor'
 import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker'
 import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker'
-import cssWorker from 'monaco-editor/esm/vs/language/css/css.worker?worker'
-import htmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker'
 import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker'
 import { watch } from 'vue'
 import type { Ref } from 'vue'
@@ -29,7 +27,7 @@ self.MonacoEnvironment = {
 
 const isDark = useDarkGlobal()
 
-export let ConvertedEditor: monaco.editor.IStandaloneCodeEditor
+export let Monacoeditor: monaco.editor.IStandaloneCodeEditor
 
 const editorState = useStorage<Record<string, any>>(
 	StorageName.EDITOR_STATE,
@@ -38,34 +36,53 @@ const editorState = useStorage<Record<string, any>>(
 
 let editorObserver: any
 
-export const mountConvertedEditor = (
-	container: Ref<HTMLDivElement>,
-	emit: any
+export const mountMonacoeditor = (
+	container: Ref<HTMLDivElement>
 ) => {
-	ConvertedEditor = monaco.editor.create(container.value!, {
-		language: 'html',
+	Monacoeditor = monaco.editor.create(container.value!, {
+		language: 'json',
 		theme: isDark.value ? 'vs-dark' : 'vs',
 		readOnly: true
 	})
 
 	editorObserver = useResizeObserver(container, () => {
-		ConvertedEditor.layout()
+		Monacoeditor.layout()
 	})
 
 	watch(isDark, (value) => {
-		ConvertedEditor.updateOptions({
+		Monacoeditor.updateOptions({
 			theme: value ? 'vs-dark' : 'vs'
 		})
 	})
 }
 
-export const unmountConvertedEditor = () => {
-	ConvertedEditor?.dispose()
+export const unmountMonacoeditor = () => {
+	Monacoeditor?.dispose()
 	editorObserver.stop()
 }
 
-export const updateEditor = (value: any) => {
-	ConvertedEditor.setValue(value)
+export const updateEditor = (value: any, type: string) => {
+	Monacoeditor.setValue(value)
+	const model = Monacoeditor.getModel()
+	monaco.editor.setModelLanguage(model, getLanguageType(type))
+
+// Monacoeditor.setModelLanguage(getLanguageType(type))
 }
 
-export const getConvertedValue = () => ConvertedEditor.getValue()!
+export const getConvertedValue = () => Monacoeditor.getValue()!
+
+const getLanguageType = (type:string) => {
+	const fileType = type.split('.')[1]
+		switch (fileType) {
+			case 'md':
+				return 'markdown'
+			case 'js':
+				return 'javascript'
+			case 'json':
+				return 'json'
+			case 'py':
+				return 'python'
+			default:
+				return 'javascript'
+		}
+}

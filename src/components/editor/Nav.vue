@@ -7,7 +7,7 @@
 					<a
 						class="text-2xl font-bold text-gray-900 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
 						href="#"
-					>Code Playground</a>
+					>[{{ type }}] ({{ title }})</a>
 				</div>
 			</div>
 
@@ -64,7 +64,9 @@
 <script setup lang="ts">
 import { useToggle } from '@vueuse/core'
 import { useDarkGlobal } from '@/composables/utils'
+import { title } from '@/composables/editor'
 
+const type = useRoute().query.type
 const isDark = useDarkGlobal()
 const toggleDark = useToggle(isDark)
 </script>

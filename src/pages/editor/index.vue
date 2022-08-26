@@ -2,8 +2,8 @@
 	<div>
 		<Nav />
 		<Main />
+		<PageLoading v-if="loading" />
 	</div>
-	<PageLoading v-if="loading" />
 </template>
 
 <script setup lang="ts">
