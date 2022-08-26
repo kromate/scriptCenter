@@ -4,7 +4,7 @@
 			Centeral collection of scripts
 		</h1>
 		<p class="text-xl font-light w-full max-w-lg">
-			ScriptCental is basically a web extension of RottenScript with other features like search, share, edit and maybe even run (coming soon.)
+			ScriptCental is basically a web interface for <a class="underline" href="https://github.com/HarshCasper/Rotten-Scripts" target="_blank" rel="noopener noreferrer">RottenScript</a>  with other features like search, share, edit and maybe even run (coming soon.)
 		</p>
 	</div>
 </template>
