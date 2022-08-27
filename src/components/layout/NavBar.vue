@@ -8,7 +8,7 @@
 			<div>
 				<a
 					class="mx-2 relative text-black flex items-center md:text-xl text-base gap-3"
-					href="https://github.com/kromate/tailwind-inliner"
+					href="https://github.com/kromate/scriptCenter"
 					target="_BLANK"
 				>
 					Star on Github

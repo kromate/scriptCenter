@@ -5,7 +5,7 @@
 			<div class="flex items-center justify-between">
 				<div>
 					<a
-						class="text-2xl font-bold text-gray-900 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
+						class="md:text-2xl text-xs font-bold text-gray-900 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
 						href="#"
 					>[{{ type }}] ({{ title }})</a>
 				</div>
@@ -14,7 +14,7 @@
 			<div class="flex justify-center lg:flex lg:mt-0 lg:-mx-2">
 				<a
 					class="mx-2 relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-					href="https://github.com/wobsoriano/code-playground"
+					href="https://github.com/kromate/scriptCenter"
 					target="_BLANK"
 				>
 					<svg
@@ -72,7 +72,5 @@ const toggleDark = useToggle(isDark)
 </script>
 
 <style>
-nav {
-  height: var(--nav-height);
-}
+
 </style>

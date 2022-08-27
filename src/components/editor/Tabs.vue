@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="border-b border-gray-200 dark:border-gray-700 text-sm flex justify-start dark:bg-gray-900 h-10"
+		class="border-b border-gray-200 dark:border-gray-700 text-sm flex justify-start dark:bg-gray-900 h-10 overflow-x-auto max-w-[100vw]"
 	>
 		<a
 			v-for="item in tabArray"
