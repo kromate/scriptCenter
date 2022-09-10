@@ -1,0 +1,9 @@
+.btn {
+    @apply py-2 px-6 text-sm rounded-md;
+}
+.btn-primary {
+    @apply btn bg-primary text-secondary;
+}
+.btn-secondary {
+    @apply btn text-white;
+}

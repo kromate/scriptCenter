@@ -1,6 +1,6 @@
 
 <template>
-	<div class="w-full border-2 mx-auto p-4 rounded flex items-start flex-col gap-4 " @click.self="$router.push(`/editor/?type=${script.type}&id=${script.id}`)">
+	<div class="w-full mx-auto p-4 rounded flex items-start flex-col gap-4  bg-card text-wash" @click.self="$router.push(`/editor/?type=${script.type}&id=${script.id}`)">
 		<div class=" w-full max-w-[90vw] flex flex-wrap justify-between items-center">
 			<span class="flex items-center gap-3">
 				<LazyAvatar :name="script.name" :size="25" />
@@ -24,7 +24,7 @@
 		</div>
 		<LazyBadge v-else name="No Tags Available" />
 
-		<span class="text-slate-500 text-sm mt-1 font-semibold">{{ script.type }}</span>
+		<span class="text-slate-100 text-sm mt-1 font-semibold">{{ script.type }}</span>
 	</div>
 </template>
 
