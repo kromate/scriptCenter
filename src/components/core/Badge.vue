@@ -1,7 +1,7 @@
 <template>
 	<span
 		v-if="name"
-		:style="`color: ${selectPalette.color} ; background-color: ${selectPalette.bg};`"
+		:style="`color: ${selectPalette.color} ; background-color: ${selectPalette.bg}; filter: invert(1);`"
 		class="py-1.5 px-3 font-medium lg:text-sm text-xs rounded-3xl"
 	>
 		<slot :name="name">{{ toLowerCase(name) }}</slot>

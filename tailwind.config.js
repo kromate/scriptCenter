@@ -9,11 +9,9 @@ module.exports = {
     extend: {
 			colors: {
 				primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
-				dark_blue: 'var(--dark_blue)',
-				grey: 'var(--grey)',
-				light_grey: 'var(--light_grey)',
-				purple: 'var(--purple)'
+				secondary: 'var(--secondary)',
+				card: 'var(--card)',
+				wash: 'var(--wash)'
 			}
 		}
   },

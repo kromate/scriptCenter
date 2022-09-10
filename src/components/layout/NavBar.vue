@@ -5,10 +5,10 @@
 				<img src="@/assets/images/logo.svg" alt="">
 			</nuxt-link>
 			<div class="flex gap-8 text-white">
-				<nuxt-link to="#">
+				<nuxt-link to="#" class="hidden">
 					Search
 				</nuxt-link>
-				<nuxt-link to="#">
+				<nuxt-link to="#" class="hidden">
 					Explore
 				</nuxt-link>
 				<a href="https://github.com/kromate/scriptCenter" target="_BLANK">
@@ -16,8 +16,8 @@
 				</a>
 			</div>
 
-			<div class="flex items-center">
-				<button class="btn-primary">
+			<div class="flex items-center gap-4 hidden">
+				<button class="btn-secondary">
 					Sign in
 				</button>
 				<button class="btn-primary">
