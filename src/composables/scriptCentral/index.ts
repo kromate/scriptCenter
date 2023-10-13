@@ -2,7 +2,7 @@ import { Ref } from 'vue'
 import { useStorage } from '@vueuse/core'
 import { getFirestoreCollection } from '../firebase/firestore'
 
-let fetchScripts
+let fetchScripts = () => {}
 
 export type SelectedType =
 	| 'BASH'
@@ -32,7 +32,7 @@ watch(selected, (value) => {
 
 export const useScriptList = () => {
 	const loading = ref(false)
-	const scriptList = ref([])
+	const scriptList = ref([] as any[])
 
 	 fetchScripts = async () => {
 		loading.value = true

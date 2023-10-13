@@ -1,8 +1,8 @@
 import { fileURLToPath, URL } from 'node:url'
-import { defineNuxtConfig } from 'nuxt'
+
 const prefix = 'monaco-editor/esm/vs'
 
-export default defineNuxtConfig({
+export default {
 	ssr: false,
 	target: 'static',
 	head: {
@@ -20,6 +20,7 @@ export default defineNuxtConfig({
 	},
 
 	css: ['/src/assets/css/main.css'],
+	modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss'],
 	components: [
 		'@/components',
 		{ path: '@/components/core', extensions: ['vue'] }
@@ -55,4 +56,4 @@ export default defineNuxtConfig({
 			}
 		}
 	}
-})
+}

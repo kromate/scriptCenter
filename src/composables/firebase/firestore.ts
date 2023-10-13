@@ -37,7 +37,7 @@ export const getSingleFirestoreDocument = async (
 export const getFirestoreCollection = async (collectionName: string) => {
   const collectionRef = collection(db, collectionName)
   const q = query(collectionRef, limit(50), where('type', '==', selected.value))
-  const result = []
+  const result = [] as any[]
 	const querySnapshot = await getDocs(q)
 	querySnapshot.forEach((doc) => {
     result.push(doc.data())
