@@ -7,7 +7,6 @@ const scriptFiles:Ref<scriptListType[]> = useStorage('scriptFiles', [])
 export const uploadScript = async () => {
     const sc = await byFolderType()
     for (const file of scriptFiles.value) {
-        console.log(sc[file.type][file.name])
         const dataContent = sc[file.type][file.name]
         const data = {
             Name: file.name,

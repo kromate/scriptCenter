@@ -4,7 +4,6 @@ const prefix = 'monaco-editor/esm/vs'
 
 export default {
 	ssr: false,
-	target: 'static',
 	head: {
 		title: 'ScriptCentral',
 		htmlAttrs: { lang: 'en' },
@@ -37,18 +36,21 @@ export default {
 		middleware: './src/middleware'
 	},
 	vite: {
-		build: {
-			rollupOptions: {
-				output: {
-					manualChunks: {
-						jsonWorker: [`${prefix}/language/json/json.worker`],
-						cssWorker: [`${prefix}/language/css/css.worker`],
-						htmlWorker: [`${prefix}/language/html/html.worker`],
-						tsWorker: [`${prefix}/language/typescript/ts.worker`],
-						editorWorker: [`${prefix}/editor/editor.worker`]
-					}
-				}
-			}
+			define: {
+			'process.env.VSCODE_TEXTMATE_DEBUG': 'false',
+			'process.test': 'false'
+
+		},
+		optimizeDeps: {
+			include: [
+				'path-browserify',
+				'onigasm',
+				'typescript',
+				'@vue/language-service',
+				'monaco-editor-core/esm/vs/editor/editor.worker',
+				'@volar/monaco/worker',
+				'vue/server-renderer'
+			]
 		},
 		resolve: {
 			alias: {
